@@ -1,26 +1,76 @@
-## An application which shows the voting percentage and build using docker and kuberenetes.
+# Voting Application
 
-<kbd>
-<img width="1468" alt="Screenshot 2024-03-16 at 1 15 27 PM" src="https://github.com/SidhantMathur20/Voting-Application/assets/88873670/e182f917-4d73-494e-8207-1e69d9bd6928">
-</kbd>
+This application allows users to vote and view the voting percentage in real-time. It is built using Docker and orchestrated with Kubernetes to ensure scalability and high availability.
 
-## Architecture:-
-<kbd>
-<img width="1442" alt="Screenshot 2024-03-16 at 1 18 22 PM" src="https://github.com/SidhantMathur20/Voting-Application/assets/88873670/111fffb9-b8cd-476d-9598-3ff914406fb7">
-</kbd>
+## Application Overview
 
-## Commands used for running the application!
-### 1.  kubectl create -f voting-app-deploy.yaml
-### 2.  kubectl create -f voting-app-service.yaml
-### 3.  kubectl create -f redis-deploy.yaml
-### 4.  kubectl create -f redis-service.yaml
-### 5.  kubectl create -f postgres-deploy.yaml
-### 6.  kubectl create -f postgres-service.yaml
-### 7.  kubectl create -f worker-app-deploy.yaml
-### 8.  kubectl create -f result-app-deploy.yaml
-### 9.  kubectl create -f result-app-service.yaml -> Above commands are used for creating deployments!
-### 10.  kubectl get pods,svc,deployment -> Used list all the Pods, Services and Deployments!
-### 11.  minikube service voting-service --url -> Provide a dummy url to access the following service!
-### 12.  minikube service result-service --url -> Provide a dummy url to access the following service!
-### 13.  kubectl scale deployment voting-app-deploy --replicas=3 -> To scale up the number of replicas to 3!
-### 14.  kubectl get pods,svc,deployment
+The application is designed to capture votes and display the results in real-time. It is composed of several components, including a voting front-end, a Redis queue, a worker processing the votes, a Postgres database to store results, and a result display front-end.
+
+### Application Architecture
+
+The architecture is designed for scalability and fault tolerance, as illustrated below:
+
+![Application Architecture](https://github.com/SidhantMathur20/Voting-Application/assets/88873670/111fffb9-b8cd-476d-9598-3ff914406fb7 "Application Architecture Diagram")
+
+## Deployment Instructions
+
+The application is containerized and deployed using Kubernetes. Follow these steps to deploy the application:
+
+### Prerequisites
+
+- Docker
+- Kubernetes (Minikube or any Kubernetes cluster you have access to)
+- kubectl (configured to interact with your Kubernetes cluster)
+
+### Deployment Steps
+
+1. **Create Deployments and Services**
+
+   Deploy the application components using the following commands:
+
+   ```shell
+   kubectl create -f voting-app-deploy.yaml
+   kubectl create -f voting-app-service.yaml
+   kubectl create -f redis-deploy.yaml
+   kubectl create -f redis-service.yaml
+   kubectl create -f postgres-deploy.yaml
+   kubectl create -f postgres-service.yaml
+   kubectl create -f worker-app-deploy.yaml
+   kubectl create -f result-app-deploy.yaml
+   kubectl create -f result-app-service.yaml
+
+These commands will set up all the necessary deployments and services for the application to function.
+
+## Verify the Deployments
+
+After deploying, check the status of the pods, services, and deployments:
+
+  ```shell
+  kubectl get pods,svc,deployment
+
+
+## Access the Application
+
+Retrieve URLs to access the voting and result services:
+
+```shell
+minikube service voting-service --url
+minikube service result-service --url
+
+## Scaling the Application
+
+If needed, scale the voting application deployment to handle more traffic:
+
+```shell
+kubectl scale deployment voting-app-deploy --replicas=3
+
+## Clean Up
+
+Once done, you can delete all the deployed components using the `kubectl delete` command, specifying the resources to delete.
+
+## Additional Information
+
+- Make sure to modify the YAML files according to your cluster setup and requirements.
+- Ensure your Kubernetes cluster has sufficient resources to deploy all components of the application.
+- Monitor the application and Kubernetes resources to ensure smooth operation.
+
