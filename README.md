@@ -5,12 +5,16 @@ This application allows users to vote and view the voting percentage in real-tim
 ## Application Overview
 
 The application is designed to capture votes and display the results in real-time. It is composed of several components, including a voting front-end, a Redis queue, a worker processing the votes, a Postgres database to store results, and a result display front-end.
+<kbd>
+<img width="1468" alt="Screenshot 2024-03-16 at 1 15 27 PM" src="https://github.com/SidhantMathur20/Voting-Application/assets/88873670/27c12696-ad4c-4b1c-bdcc-b386eb7bdf49">
+</kbd>
 
 ### Application Architecture
 
 The architecture is designed for scalability and fault tolerance, as illustrated below:
-
-![Application Architecture](https://github.com/SidhantMathur20/Voting-Application/assets/88873670/111fffb9-b8cd-476d-9598-3ff914406fb7 "Application Architecture Diagram")
+<kbd>
+<img width="1442" alt="Screenshot 2024-03-16 at 1 18 22 PM" src="https://github.com/SidhantMathur20/Voting-Application/assets/88873670/389c9f47-6332-4f46-89fa-4fb883721d6b">
+</kbd>
 
 ## Deployment Instructions
 
