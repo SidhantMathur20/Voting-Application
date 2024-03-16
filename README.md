@@ -45,24 +45,24 @@ These commands will set up all the necessary deployments and services for the ap
 
 After deploying, check the status of the pods, services, and deployments:
 
-  ```shell
-  kubectl get pods,svc,deployment
+     ```shell
+      kubectl get pods,svc,deployment
 
 
 ## Access the Application
 
 Retrieve URLs to access the voting and result services:
 
-```shell
-minikube service voting-service --url
-minikube service result-service --url
+      ```shell
+      minikube service voting-service --url
+      minikube service result-service --url
 
 ## Scaling the Application
 
 If needed, scale the voting application deployment to handle more traffic:
 
-```shell
-kubectl scale deployment voting-app-deploy --replicas=3
+      ```shell
+      kubectl scale deployment voting-app-deploy --replicas=3
 
 ## Clean Up
 
