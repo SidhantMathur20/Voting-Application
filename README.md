@@ -28,16 +28,16 @@ The application is containerized and deployed using Kubernetes. Follow these ste
 
    Deploy the application components using the following commands:
 
-   ```shell
-   kubectl create -f voting-app-deploy.yaml
-   kubectl create -f voting-app-service.yaml
-   kubectl create -f redis-deploy.yaml
-   kubectl create -f redis-service.yaml
-   kubectl create -f postgres-deploy.yaml
-   kubectl create -f postgres-service.yaml
-   kubectl create -f worker-app-deploy.yaml
-   kubectl create -f result-app-deploy.yaml
-   kubectl create -f result-app-service.yaml
+      ```shell
+      kubectl create -f voting-app-deploy.yaml
+      kubectl create -f voting-app-service.yaml
+      kubectl create -f redis-deploy.yaml
+      kubectl create -f redis-service.yaml
+      kubectl create -f postgres-deploy.yaml
+      kubectl create -f postgres-service.yaml
+      kubectl create -f worker-app-deploy.yaml
+      kubectl create -f result-app-deploy.yaml
+      kubectl create -f result-app-service.yaml
 
 These commands will set up all the necessary deployments and services for the application to function.
 
